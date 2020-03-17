@@ -14,8 +14,8 @@
  * composed of zero or more directives.
  * See man 3 printf for more detail. You need to handle
  * the following conversion specifiers:
- * Return: return the string
  * c s %
+ * Return: return the string
  **/
 int _printf(const char *format, ...)
 {

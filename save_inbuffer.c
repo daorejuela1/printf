@@ -24,7 +24,6 @@ char *save_c(char *buffer, int position, char data)
  *puts the beggining and the end of the original buffer
  *in the end buffer to sorround the data
  */
-	free(buffer);
 	return (new_buffer);
 }
 
@@ -58,7 +57,6 @@ char *save_s(char *buffer, int position, char *data)
 	 *puts the beggining and the end of the original
 	 *buffer in the end buffer to sorround the data
 	 */
-	free(buffer);
 	return (new_buffer);
 }
 
@@ -107,7 +105,5 @@ char *save_d(char *buffer, int position, int data)
 	 *puts the beggining and the end of the original
 	 *buffer in the end buffer to sorround the data
 	 */
-	free(data_converted);
-	free(buffer);
 	return (new_buffer);
 }

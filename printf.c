@@ -18,40 +18,40 @@
 int _printf(const char *format, ...)
 {
 	int i = 0;
-	char *buffer = malloc(_strlen(format) * sizeof (char));
+	char *buffer = malloc(_strlen((char *)format) * sizeof (char));
+	va_list valist;
+
 	while (format[i])
     {
         buffer[i] = format[i];
         i++;
     }
-	va_list valist;
-	
 	va_start(valist, format);
 	if (buffer == NULL)
 	{
 		return (-1);
 	}
-	if (buffer == "%")
+	if (*buffer == '%' && *(buffer + 1) == 0)
 	{
 		return (-1);
 	}
-	for (i = 0; buffer[i] != '0'; i++)
+	for (i = 0; buffer[i + 1] != '0'; i++)
 	{
 		if (buffer[i] == '%')
 		{
 			switch(buffer[i + 1])
 			{
 				case 'c' :
-				buffer = save_c(buffer, i, va_arg(valist, int));
+				buffer = save_c(buffer, i - 1, va_arg(valist, int));
 				break;
 				case 's' :
-				buffer = save_s(buffer, i, va_arg(valist, char *));
+				buffer = save_s(buffer, i - 1, va_arg(valist, char *));
 				break;
 				case 'd' :
-				buffer = save_d(buffer, i, va_arg(valist, int));
+				buffer = save_d(buffer, i - 1, va_arg(valist, int));
 				break;
 				case 'i' :
-				buffer = save_d(buffer, i, va_arg(valist, int));
+				buffer = save_d(buffer, i - 1, va_arg(valist, int));
 				break;
 				default:
 				break;
@@ -60,5 +60,5 @@ int _printf(const char *format, ...)
 	}
 	puts(buffer);
 	va_end(valist);
-	return (buffer);
+	return (5);
 }

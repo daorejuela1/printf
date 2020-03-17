@@ -1,3 +1,4 @@
+#include "holberton.h"
 /**
  *save_c - saves a character in a new buffer using the position flag
  *@buffer: input array to copy from

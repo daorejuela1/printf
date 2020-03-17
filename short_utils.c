@@ -2,9 +2,14 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include "holberton.h"
+/**
+ * useswitch - check for case
+ * @buffer: buffer
+ * @valist: valist
+ * @i: counter
+ */
 void useswitch(char *buffer, va_list valist, int i)
 {
-	
 	if (buffer[i] == '%')
 	{
 			switch (buffer[i + 1])

@@ -22,7 +22,8 @@ int _printf(const char *format, ...)
 	int i = 0;
 	char *buffer = malloc(_strlen((char *)format) * sizeof(char) + 1);
 	va_list valist;
-
+	if (format == NULL)
+  	return (-1);
 	while (format[i])
 	{
 		buffer[i] = format[i];

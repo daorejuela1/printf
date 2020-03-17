@@ -1,3 +1,4 @@
+#include <stdarg.h>
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
 
@@ -11,5 +12,7 @@ char * c_number_to_arr(char * array_data, int n);
 unsigned int cal_digits(unsigned int n);
 int _putchar(char c);
 int _printf(const char *format, ...);
+void useswitch(char *buffer, va_list valist, int i);
+char *save_m(char *buffer, int position);
 
 #endif

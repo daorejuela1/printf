@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "holberton.h"
+#include <unistd.h>
 /**
  * _printf - printff function
  * @format: format string first printf string
@@ -58,7 +59,6 @@ int _printf(const char *format, ...)
 			}
 		}
 	}
-	puts(buffer);
 	va_end(valist);
-	return (_strlen(buffer));
+	return (write(1, buffer, _strlen(buffer)));
 }

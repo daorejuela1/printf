@@ -18,7 +18,7 @@
 int _printf(const char *format, ...)
 {
 	int i = 0;
-	char *buffer = malloc(_strlen((char *)format) * sizeof (char));
+	char *buffer = malloc(_strlen((char *)format) * sizeof (char) + 1);
 	va_list valist;
 
 	while (format[i])
@@ -35,7 +35,7 @@ int _printf(const char *format, ...)
 	{
 		return (-1);
 	}
-	for (i = 0; buffer[i + 1] != '0'; i++)
+	for (i = 0; format[i] != '0'; i++)
 	{
 		if (buffer[i] == '%')
 		{

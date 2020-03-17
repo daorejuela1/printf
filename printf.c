@@ -60,5 +60,5 @@ int _printf(const char *format, ...)
 	}
 	puts(buffer);
 	va_end(valist);
-	return (5);
+	return (_strlen(buffer));
 }

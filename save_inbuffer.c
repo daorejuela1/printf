@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdlib.h>
 /**
  *save_c - saves a character in a new buffer using the position flag
  *@buffer: input array to copy from
@@ -76,7 +77,7 @@ char *save_d(char *buffer, int position, int data)
 	char *new_buffer;
 
 	num = data;
-	while (num = num / 10)
+	while ((num = num / 10))
 		counter++;
 	if (data < 0)
 		counter = counter + 2;

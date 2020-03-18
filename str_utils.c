@@ -112,7 +112,7 @@ void put_in_place(char *new_buffer, char *buffer, int position, int data_len)
 	_strncpy(new_buffer, buffer, position + data_len + 1, -1, data_len - 2);
 	/*
 	 *Copies data from original buffer to new buffer
-	 *from %[x] position + datalenght
+	 *From %[x] position + datalenght
 	 *till the end
 	 */
 }

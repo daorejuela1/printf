@@ -124,8 +124,8 @@ char *save_d(char *buffer, int position, char special, va_list valist)
 	}
 	put_in_place(new_buffer, buffer, position, data_len);
 	/*
-	 *puts the beggining and the end of the original
-	 *buffer in the end buffer to sorround the data
+	 *Puts the beggining and the end of the original
+	 *Buffer in the end buffer to sorround the data
 	 */
 	return (new_buffer);
 }

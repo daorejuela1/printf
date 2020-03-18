@@ -1,19 +1,29 @@
-#include "holberton.h"
+#include "holberton2.h"
 #include <stdlib.h>
 /**
  *save_c - saves a character in a new buffer using the position flag
  *@buffer: input array to copy from
  *@position: position where the new character should be implemented
- *@data: Character that wants to be copy
+ *@special: special character to handle %
+ *@valist: Character that wants to be copy
+ *
  *Return: destiny array
  */
-char *save_c(char *buffer, int position, char data)
+char *save_c(char *buffer, int position, char special, va_list valist)
 {
 	int data_len;
+	char data;
 	char *new_buffer;
 
-	data_len = 1;
-	new_buffer = malloc((_strlen(buffer) - data_len) * sizeof(char));
+	if (special == '%')
+		data = '%';
+	else
+		data = va_arg(valist, int);
+	if (data == '\0')
+		data_len = 0;
+	else
+	    data_len = 1;
+	new_buffer = malloc((_strlen(buffer) + data_len - 2) * sizeof(char));
 	if (new_buffer == NULL)
 		exit(1);
 /*Stores in the heap the characters necessary to the modified buffer*/
@@ -31,14 +41,20 @@ char *save_c(char *buffer, int position, char data)
  *save_s - saves a String in a new buffer using the position flag
  *@buffer: input array to copy from
  *@position: position where the new character should be implemented
- *@data: String that wants to be copy
+ *@special: special character to detect %
+ *@valist: String that wants to be copy
  *Return: destiny array
  */
-char *save_s(char *buffer, int position, char *data)
+char *save_s(char *buffer, int position, char special, va_list valist)
 {
 	int data_len, i;
-	char *new_buffer;
+	char *new_buffer, *data;
 
+	data = va_arg(valist, char *);
+	if (special == '%')
+		data = "%";
+	if (data == NULL)
+		data = "(null)";
 	data_len = _strlen(data);
 	new_buffer = malloc((_strlen(buffer) + data_len - 2) * sizeof(char));
 	if (new_buffer == NULL)
@@ -60,20 +76,26 @@ char *save_s(char *buffer, int position, char *data)
 	return (new_buffer);
 }
 
+
 /**
  *save_d - saves a String in a new buffer using the position flag
  * taking as input an integer
  *@buffer: input array to copy from
  *@position: position where the new character should be implemented
- *@data: String that wants to be copy
+ *@special: character to represent % cases
+ *@valist: String that wants to be copy
  *Return: destiny array
  */
-char *save_d(char *buffer, int position, int data)
+char *save_d(char *buffer, int position, char special, va_list valist)
 {
 	int data_len, i, num, counter = 0;
 	char *data_converted;
 	char *new_buffer;
+	int data;
 
+	data = va_arg(valist, int);
+	if (special == '%')
+		data = '%';
 	num = data;
 	while ((num = num / 10))
 		counter++;

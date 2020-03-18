@@ -31,8 +31,8 @@ char *save_c(char *buffer, int position, char special, va_list valist)
 /*Saves in the exact position of the buffer the character replacing %c*/
 	put_in_place(new_buffer, buffer, position, data_len);
 /*
- *puts the beggining and the end of the original buffer
- *in the end buffer to sorround the data
+ *Puts the beggining and the end of the original buffer
+ *In the end buffer to sorround the data
  */
 	return (new_buffer);
 }

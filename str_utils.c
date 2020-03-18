@@ -98,11 +98,11 @@ void _strncpy(char *dest, char *src, int init, int end, int data_len)
 	}
 }
 /**
- *put_in_place - copies the start and enf of an array that sorrounds a new word
- *@new_buffer: destiny array to copy the string
- *@buffer: source string being copy
- *@position: initial index.
- *@data_len: lenght of the buffer not counting NULL
+ *put_in_place - Copies the start and enf of an array that sorrounds a new word
+ *@new_buffer: Destiny array to copy the string
+ *@buffer: Source string being copy
+ *@position: Initial index.
+ *@data_len: Lenght of the buffer not counting NULL
  *Return: Nothing.
  */
 void put_in_place(char *new_buffer, char *buffer, int position, int data_len)

@@ -1,7 +1,7 @@
 #include <stdlib.h>
 /**
  *cal_digits - Find the number of digits in the number
- *@n: input number
+ *@n: Input number
  *Return: Number base
  */
 unsigned int cal_digits(unsigned int n)

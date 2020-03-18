@@ -1,6 +1,6 @@
 #include <stdlib.h>
 /**
- *cal_digits - find the number of digits in the word
+ *cal_digits - Find the number of digits in the number
  *@n: input number
  *Return: Number base
  */

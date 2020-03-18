@@ -8,7 +8,7 @@ char *save_s (char *buffer, int position, char special, va_list valist);
 typedef struct Struktur
 {
         char *fo;
-        void (*f)(char *string);
+        void (*f)(char *buffer, int position, char special, va_list valist);
 } struktur;
 void put_in_place(char *new_buffer, char *buffer, int position, int data_len);
 void _strncpy(char *dest, char *src, int init, int end, int data_len);

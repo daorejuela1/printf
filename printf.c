@@ -19,7 +19,14 @@
 int _printf(const char *format, ...)
 {
 	int i = 0, result;
+	int b = 0;
 	char *buffer;
+	struktur form[] = {
+        {"c", save_c},
+        {"s", save_s},
+        {"d", save_d},
+        {NULL, NULL}
+        };
 	va_list valist;
 
 	if (format == NULL)
@@ -39,9 +46,18 @@ int _printf(const char *format, ...)
 	{
 		return (-1);
 	}
-	for (i = 0; format[i]; i++)
+	for (i = 0; format[i] != '0'; i++)
 	{
-		useswitch(buffer, valist, i);
+		if (buffer[i] == '%')
+		{
+			for (b = 0; b < 4; b++)
+			{
+				if (buffer[i + 1] == *struktur[b].fo)
+				{
+					struktur[b].f(buffer, i, '0', valist)
+				}
+			}
+		}
 	}
 	va_end(valist);
 	result = write(1, buffer, _strlen(buffer));

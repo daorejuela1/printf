@@ -1,0 +1,37 @@
+.TH man 2 "17 March 2019" "0.32" "_PRINTF"
+.SH NAME
+.B printf
+- format and print data.
+.SH SYNOPSIS
+printf FORMAT [ARGUMENT]...
+.SH DESCRIPTION
+Print ARGUMENT(s) according to FORMAT.
+
+FORMAT controls the output as in C printf.  Interpreted sequences are:
+
+\\"     double quote
+
+\\\     backslash
+
+\\a     alert (BEL)
+
+\\b     backspace
+
+\\c     produce no further output
+
+\\e     escape
+
+\\f     form feed
+
+\\n     new line
+
+\\r     carriage return
+
+\\t     horizontal tab
+
+\\v     vertical tab
+
+NOTE:  your shell may have its own version of printf, which usually supersedes the version described here. Please refer to your shell's documentation for details about the options it supports.
+
+.SH AUTHOR
+David Orejuela and Nick Arshadi

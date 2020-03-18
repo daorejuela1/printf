@@ -30,8 +30,8 @@ unsigned int cal_digits(unsigned int n)
 
 /**
  *c_number_to_arr - Prints an int number by using putchar
- *@n: input number
- *@array_data: array to store final string
+ *@n: Input number
+ *@array_data: Array to store final string
  *Return: None
  */
 char *c_number_to_arr(char *array_data, int n)

@@ -78,10 +78,10 @@ char *save_s(char *buffer, int position, char special, va_list valist)
 
 
 /**
- *save_d - saves a String in a new buffer using the position flag
- * taking as input an integer
- *@buffer: input array to copy from
- *@position: position where the new character should be implemented
+ *save_d - Saves a String in a new buffer using the position flag
+ * aking as input an integer
+ *@buffer: Input array to copy from
+ *@position: Position where the new character should be implemented
  *@special: character to represent % cases
  *@valist: String that wants to be copy
  *Return: destiny array

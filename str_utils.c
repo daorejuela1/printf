@@ -29,7 +29,7 @@ unsigned int cal_digits(unsigned int n)
 }
 
 /**
- *c_number_to_arr - prints an int number by using putchar
+ *c_number_to_arr - Prints an int number by using putchar
  *@n: input number
  *@array_data: array to store final string
  *Return: None

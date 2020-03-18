@@ -66,7 +66,8 @@ char *c_number_to_arr(char *array_data, int n)
 int _strlen(char *s)
 {
 	int counter = 0;
-
+	if (s == NULL)
+		return (0);
 	while (*(s + counter) != 0)
 	{
 		counter++;

@@ -1,4 +1,4 @@
-#include "holberton2.h"
+#include "holberton.h"
 #include <stdlib.h>
 /**
  *save_c - saves a character in a new buffer using the position flag

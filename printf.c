@@ -18,17 +18,13 @@
  **/
 int _printf(const char *format, ...)
 {
-	int i = 0, result;
-	int b = 0;
+	int i = 0, b = 0;
 	char *buffer;
-	struktur form[] = {
-        {"c", save_c},
-        {"s", save_s},
-        {"d", save_d},
-        {NULL, NULL}
-        };
 	va_list valist;
-
+	struktur form[] = {{"c", save_c}, {"s", save_s}, {"d", save_d},
+		{"i", save_d},
+		{"%", save_c}
+		};
 	if (format == NULL)
 		return (-1);
 	buffer = malloc(_strlen((char *)format) * sizeof(char) + 1);
@@ -39,27 +35,26 @@ int _printf(const char *format, ...)
 	}
 	va_start(valist, format);
 	if (buffer == NULL)
-	{
 		return (-1);
-	}
 	if (*buffer == '%' && *(buffer + 1) == 0)
-	{
 		return (-1);
-	}
-	for (i = 0; format[i] != '0'; i++)
+	for (i = 0; format[i + 1] != '0'; i++)
 	{
 		if (buffer[i] == '%')
 		{
-			for (b = 0; b < 4; b++)
+			for (b = 0; b < 5; b++)
 			{
-				if (buffer[i + 1] == *struktur[b].fo)
+				if (buffer[i + 1] == *form[b].fo)
 				{
-					struktur[b].f(buffer, i, '0', valist)
-				}
+					if (buffer[i + 1] != '%')
+					buffer = form[b].f(buffer, (i = i - 1), '0', valist);
+					else
+						buffer = form[b].f(buffer, i - 1, '%', valist);
+						break;
+					}
 			}
 		}
 	}
 	va_end(valist);
-	result = write(1, buffer, _strlen(buffer));
-	return (result);
+	return (write(1, buffer, _strlen(buffer)));
 }

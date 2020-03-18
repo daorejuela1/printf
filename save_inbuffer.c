@@ -38,12 +38,12 @@ char *save_c(char *buffer, int position, char special, va_list valist)
 }
 
 /**
- *save_s - saves a String in a new buffer using the position flag
- *@buffer: input array to copy from
- *@position: position where the new character should be implemented
- *@special: special character to detect %
+ *save_s - Saves a String in a new buffer using the position flag
+ *@buffer: Input array to copy from
+ *@position: Position where the new character should be implemented
+ *@special: Special character to detect %
  *@valist: String that wants to be copy
- *Return: destiny array
+ *Return: Destiny array
  */
 char *save_s(char *buffer, int position, char special, va_list valist)
 {

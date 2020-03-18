@@ -59,7 +59,7 @@ char *c_number_to_arr(char *array_data, int n)
 }
 
 /**
- *_strlen - returns string
+ *_strlen - Returns string
  *@s: input string
  *Return: lenght not counting NULL
  */
